@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mithra</title>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
+
+    <!-- font awesome cdn link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="./farmer_signin.css" />
+    <style>
+      /* Adjusting form container size and spacing */
+      .form-container {
+        width: 100%;
+        max-width: 400px;
+        padding: 60px 20px 20px; /* Increased top padding */
+        background-color: #fff;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        margin: 50px auto; /* Added top margin to push the container down */
+      }
+
+      .form-container input {
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+
+      .form-container button {
+        width: 100%;
+        padding: 12px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+        margin-top: 20px;
+      }
+
+      .form-container button:hover {
+        background-color: #388e3c;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #f9f9f9;
+      }
+
+      h1, h2 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- header section starts  -->
+
+    <header class="header">
+      <a href="./index.html" class="logo">
+        <i class="fas fa-seedling"></i> Mithra
+      </a>
+    </header>
+        
+    <!-- Sign in/up Form -->
+    <h2>Sign in/up Form</h2>
+    <div class="container" id="container">
+      <div class="form-container sign-up-container">
+        <form id="signupForm" action="#" method="POST">
+            <h1>Create Account</h1>
+            <input type="text" placeholder="Full Name" required />
+            <input type="text" placeholder="User Name" required />
+            <input type="email" placeholder="Email" required />
+            <input type="password" placeholder="Password" required />
+            <input type="text" placeholder="Aadhar Card Number" required />
+            <input type="text" placeholder="Address" required />
+            <input type="date" placeholder="Date of Birth" required />
+            <input type="tel" placeholder="Phone Number" pattern="[0-9]{10}" required />
+            <button type="submit" class="btn btn-success" onclick="validateAndRedirect(event, 'signupForm', './other.html')">Sign Up</button>
+          </form>
+      </div>
+      
+      <div class="form-container sign-in-container">
+        <form id="signinForm" action="#" method="POST">
+          <h1>Sign in</h1>
+          <span>or use your account</span>
+          <input type="email" placeholder="Email" required />
+          <input type="password" placeholder="Password" required />
+          <a href="#">Forgot your password?</a>
+          
+          <!-- Sign In Button -->
+          <button type="button" class="btn btn-success" onclick="validateAndRedirect(event, 'signinForm', './index.html')">Sign In</button>
+        </form>
+      </div>
+      
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-left">
+            <h1>Welcome Back!</h1>
+            <p>To keep connected with us please login with your personal info</p>
+            <button class="ghost" id="signIn">Sign In</button>
+          </div>
+          <div class="overlay-panel overlay-right">
+            <h1>Hello, Friend!</h1>
+            <p>Enter your personal details and start your journey with us</p>
+            <button class="ghost" id="signUp">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./sign_In.js"></script>
+    <!-- <script>
+      function validateAndRedirect(event, formId, redirectUrl) {
+        event.preventDefault(); // Prevent the form from submitting
+
+        // Get the form element
+        const form = document.getElementById(formId);
+
+        // Check if the form is valid
+        if (form.checkValidity()) {
+            // If valid, redirect to the provided URL
+            window.location.href = redirectUrl;
+        } else {
+            // If not valid, show validation errors
+            form.reportValidity();
+        }
+      }
+    </script> -->
+  </body>
+</html>
